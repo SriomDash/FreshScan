@@ -28,6 +28,14 @@ const scanSchema = new mongoose.Schema({
   imageOriginalName: {
     type: String,
   },
+  imagePath: {
+    type: String,
+    required: true, // ✅ FIX
+  },
+  cloudinaryPublicId: {
+    type: String,
+    required: true, 
+  },
 }, { timestamps: true });
 
 // Index for fast vendor queries
