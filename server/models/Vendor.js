@@ -24,15 +24,22 @@ const vendorSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  city: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  state: {
+    type: String,
+    trim: true,
+    default: '',
+  },
 }, { timestamps: true });
 
-// ── Generate unique Vendor ID before save ─────────────
 vendorSchema.pre('save', async function (next) {
-  // Hash password if modified
   if (this.isModified('password')) {
     this.password = await bcrypt.hash(this.password, 12);
   }
-  // Generate vendorId on first save
   if (!this.vendorId) {
     const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
     let id;
@@ -46,7 +53,6 @@ vendorSchema.pre('save', async function (next) {
   next();
 });
 
-// ── Compare password ──────────────────────────────────
 vendorSchema.methods.comparePassword = async function (candidate) {
   return bcrypt.compare(candidate, this.password);
 };

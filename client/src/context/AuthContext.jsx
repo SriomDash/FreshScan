@@ -28,8 +28,8 @@ export function AuthProvider({ children }) {
     return r.data
   }
 
-  const signup = async (name, email, password) => {
-    const r = await api.post('/api/auth/signup', { name, email, password })
+  const signup = async (name, email, password, city, state) => {
+    const r = await api.post('/api/auth/signup', { name, email, password, city, state })
     localStorage.setItem('fs_token', r.data.token)
     api.defaults.headers.common['Authorization'] = `Bearer ${r.data.token}`
     setVendor(r.data.vendor)

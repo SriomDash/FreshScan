@@ -9,20 +9,22 @@ const formatVendor = (vendor) => ({
   name:     vendor.name,
   email:    vendor.email,
   vendorId: vendor.vendorId,
+  city:     vendor.city,
+  state:    vendor.state,
   createdAt:vendor.createdAt,
 });
 
 // POST /api/auth/signup
 exports.signup = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, city, state } = req.body;
     if (!name || !email || !password)
       return res.status(400).json({ message: 'Please provide name, email and password' });
 
     const exists = await Vendor.findOne({ email });
     if (exists) return res.status(409).json({ message: 'Email already registered' });
 
-    const vendor = await Vendor.create({ name, email, password });
+    const vendor = await Vendor.create({ name, email, password, city: city||'', state: state||'' });
     const token = signToken(vendor._id);
 
     res.status(201).json({ token, vendor: formatVendor(vendor) });

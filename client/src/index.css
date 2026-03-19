@@ -1,25 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap');
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #0d1410;
-  --bg2:       #131a15;
-  --bg3:       #192018;
-  --surface:   #1e2820;
-  --surface2:  #243020;
-  --border:    rgba(74,200,100,0.12);
-  --border2:   rgba(74,200,100,0.22);
+  --bg:        #0a0c0a;
+  --bg2:       #0f110f;
+  --bg3:       #141714;
+  --surface:   #181c18;
+  --surface2:  #1e231e;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.13);
   --green:     #4ac864;
   --green2:    #2d9e47;
   --green-dim: #1e6b30;
   --red:       #e05a5a;
   --amber:     #e8a842;
-  --text:      #e8f0e8;
-  --text2:     #8aab8a;
-  --text3:     #4d664d;
+  --text:      #f0f4f0;
+  --text2:     #8a9e8a;
+  --text3:     #4a5e4a;
   --radius:    14px;
   --radius-sm: 8px;
-  --font-head: 'Syne', sans-serif;
-  --font-body: 'Instrument Sans', sans-serif;
+  --font-head: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 html { font-size: 16px; }
@@ -30,6 +31,7 @@ body {
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 body::before {
@@ -43,7 +45,6 @@ a { text-decoration: none; color: inherit; }
 button { cursor: pointer; font-family: var(--font-body); }
 input { font-family: var(--font-body); }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg2); }
 ::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }

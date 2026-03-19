@@ -338,7 +338,13 @@ export default function DashboardPage() {
             </thead>
             <tbody>
               {[...stats.byFruit]
-                .sort((a, b) => b.rotten - a.rotten || b.count - a.count)
+                .sort((a, b) => {
+                  const totalA = a.fresh + a.rotten
+                  const totalB = b.fresh + b.rotten
+                  const pctA = totalA > 0 ? (a.rotten / totalA) * 100 : 0
+                  const pctB = totalB > 0 ? (b.rotten / totalB) * 100 : 0
+                  return pctB - pctA
+                })
                 .map(f => {
                   const total = f.fresh + f.rotten
                   const rottenPct = total > 0 ? Math.round((f.rotten / total) * 100) : 0
