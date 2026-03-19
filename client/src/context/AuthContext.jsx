@@ -15,9 +15,7 @@ export function AuthProvider({ children }) {
         .then(r => setVendor(r.data.vendor))
         .catch(() => { localStorage.removeItem('fs_token') })
         .finally(() => setLoading(false))
-    } else {
-      setLoading(false)
-    }
+    } else { setLoading(false) }
   }, [])
 
   const login = async (email, password) => {
@@ -28,8 +26,9 @@ export function AuthProvider({ children }) {
     return r.data
   }
 
-  const signup = async (name, email, password) => {
-    const r = await api.post('/api/auth/signup', { name, email, password })
+  // ── signup now accepts city + state ──
+  const signup = async (name, email, password, city, state) => {
+    const r = await api.post('/api/auth/signup', { name, email, password, city, state })
     localStorage.setItem('fs_token', r.data.token)
     api.defaults.headers.common['Authorization'] = `Bearer ${r.data.token}`
     setVendor(r.data.vendor)

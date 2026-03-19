@@ -1,34 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:       #0a0a0a;
-  --bg2:      #111111;
-  --bg3:      #1a1a1a;
-  --surface:  #161616;
-  --surface2: #1e1e1e;
-  --border:   rgba(255,255,255,0.08);
-  --border2:  rgba(255,255,255,0.14);
-  --green:    #22c55e;
-  --green-dim:#16a34a;
-  --green-bg: rgba(34,197,94,0.12);
-  --red:      #ef4444;
-  --red-bg:   rgba(239,68,68,0.12);
-  --amber:    #f59e0b;
-  --amber-bg: rgba(245,158,11,0.12);
-  --blue:     #3b82f6;
-  --text:     #ffffff;
-  --text2:    #a1a1aa;
-  --text3:    #52525b;
-  --radius:   14px;
-  --radius-sm:8px;
-  --font-head:'Space Grotesk',sans-serif;
-  --font-body:'Inter',sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0a0c0a;
+  --bg2:       #0f110f;
+  --bg3:       #141714;
+  --surface:   #181c18;
+  --surface2:  #1e231e;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.12);
+  --green:     #4ac864;
+  --green2:    #2d9e47;
+  --green-dim: #1e6b30;
+  --red:       #e05a5a;
+  --amber:     #e8a842;
+  --text:      #f0f4f0;
+  --text2:     #8a9e8a;
+  --text3:     #4a5e4a;
+  --radius:    14px;
+  --radius-sm: 8px;
+  --font-head: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
-html{font-size:16px;}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
-a{text-decoration:none;color:inherit;}
-button{cursor:pointer;font-family:var(--font-body);}
-input,select{font-family:var(--font-body);}
-::-webkit-scrollbar{width:5px;height:5px;}
-::-webkit-scrollbar-track{background:var(--bg2);}
-::-webkit-scrollbar-thumb{background:var(--surface2);border-radius:3px;}
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: var(--font-body); }
+input, select { font-family: var(--font-body); }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
